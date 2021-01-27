@@ -1,7 +1,10 @@
-import React from "react"
+import React, {useContext} from "react"
 
-const WeatherData = ({ weather }) => {
-    const {temp, humidity, pressure} = weather //object destructuring
+import Context from "../Context"
+
+const WeatherData = () => {
+    const {weather} = useContext(Context)
+    const {temp, humidity, pressure} = weather 
     return (
         <div className="weather-data">
             <p className="weather__tagline">Weather forecast for <span className="weather-data__city">Manchester</span></p>
